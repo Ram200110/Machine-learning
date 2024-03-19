@@ -1,0 +1,13 @@
+/* sad.css */
+body {
+    /* Set the background image for the entire body */
+    background-image: url('/static/images/sad.jpg');
+    /* Adjust background size to cover the entire container */
+    background-size: cover;
+    /* Center the background image horizontally and vertically */
+    background-position: center;
+    /* Prevent the background image from repeating */
+    background-repeat: no-repeat;
+    /* Set the background color as a fallback in case the image doesn't load */
+    background-color: rgb(243, 248, 248);
+}

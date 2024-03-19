@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychological Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='forms.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+            <div class="navbar-collapse">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="value">PREDICTION</a></li>
+                    <li><a href="Physical">PHYSICAL</a></li>
+                    <li><a href="physcologicaly">PSYCHOLOGICAL</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="contenet">
+        <form action="physcologicalyresult" method="post">
+            <h1>Psychological Questions:</h1><center>
+            <div class="mb-3">
+                <label for="sadness">1. Have you experienced persistent feelings of sadness or hopelessness in the past few weeks?</label><br>
+                <input type="radio" id="sadnessYes" name="sadness" value="yes">
+                <label for="sadnessYes">Yes</label>
+                <input type="radio" id="sadnessNo" name="sadness" value="no" checked>
+                <label for="sadnessNo">No</label><br>
+                <input type="text" id="chestPainInput" name="chestPainInput" class="textbox" placeholder="Details (if any)">
+            </div>
+            <div class="mb-3">
+                <label for="worry">2. Do you often find yourself worrying excessively about various aspects of your life?</label><br>
+                <input type="radio" id="worryYes" name="worry" value="yes">
+                <label for="worryYes">Yes</label>
+                <input type="radio" id="worryNo" name="worry" value="no" checked>
+                <label for="worryNo">No</label><br>
+                <input type="text" id="chestPainInput" name="chestPainInput" class="textbox" placeholder="Details (if any)">
+            </div>
+            <div class="mb-3">
+                <label for="appetite">3. Have you noticed a significant change in your appetite, either eating much more or much less than usual?</label><br>
+                <input type="radio" id="appetiteYes" name="appetite" value="yes">
+                <label for="appetiteYes">Yes</label>
+                <input type="radio" id="appetiteNo" name="appetite" value="no" checked>
+                <label for="appetiteNo">No</label><br>
+                <input type="text" id="chestPainInput" name="chestPainInput" class="textbox" placeholder="Details (if any)">
+            </div>
+            <div class="mb-3">
+                <label for="impendingDoom">4. Do you frequently experience a sense of impending doom or fear without an apparent reason?</label><br>
+                <input type="radio" id="impendingDoomYes" name="impendingDoom" value="yes">
+                <label for="impendingDoomYes">Yes</label>
+                <input type="radio" id="impendingDoomNo" name="impendingDoom" value="no" checked>
+                <label for="impendingDoomNo">No</label><br>
+                <input type="text" id="chestPainInput" name="chestPainInput" class="textbox" placeholder="Details (if any)">
+            </div>
+            <div class="mb-3">
+                <label for="stress">5. Have you been struggling with feelings of intense stress or pressure in your daily life?</label><br>
+                <input type="radio" id="stressYes" name="stress" value="yes">
+                <label for="stressYes">Yes</label>
+                <input type="radio" id="stressNo" name="stress" value="no" checked>
+                <label for="stressNo">No</label><br>
+                <input type="text" id="chestPainInput" name="chestPainInput" class="textbox" placeholder="Details (if any)">
+            </div></center>
+            <center><input type="submit" class="my-cta-button" value="SUBMIT"></center>
+        </form>
+        <div class="result">
+            {% if result_message =="The person may not have heart disease." %}
+            <h1>{{ result_message }}</h1>
+            {% endif %}
+            
+            {% if result_message == "The person might have heart disease." %}
+            <h1>{{ result_message }}</h1>
+            <h2>Suggestion To Prevent</h2>
+            <pre>
+                <p>
+                Practice stress-reduction techniques such as deep breathing, meditation, or yoga.
+                Identify sources of stress in your life and work on finding healthy ways to cope with them.
+                Prioritize self-care activities that bring relaxation and joy.
+                Regular Exercise:
+                Engage in regular physical activity, as exercise has been shown to have positive effects on mental health.
+                Choose activities you enjoy, whether it's walking, jogging, cycling, or participating in group fitness classes.
+                Healthy Sleep Habits:
+                Establish a consistent sleep routine with a regular bedtime and wake-up time.
+                Create a comfortable sleep environment and avoid stimulants like caffeine close to bedtime.
+                Aim for 7-9 hours of quality sleep each night.
+                Social Connections:
+                Cultivate strong, supportive relationships with friends and family.
+                Stay socially connected, even in a digital age, through regular interactions and meaningful conversations.
+                Seek help and talk openly about your feelings if you are struggling emotionally.
+                Mindfulness and Mind-Body Practices:
+                Practice mindfulness and meditation to stay present and reduce anxiety.
+                Explore mind-body practices such as tai chi or qigong, which can have positive effects on both mental and physical health.
+                </p>
+            </pre>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

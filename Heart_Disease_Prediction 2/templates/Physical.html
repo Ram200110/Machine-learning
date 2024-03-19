@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='forms.css') }}">
+    
+</head>
+<body>
+  <nav>
+    <div class="container">
+        <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+        <div class="navbar-collapse">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="value">PREDICTION</a></li>
+                <li><a href="Physical">PHYSICAL</a></li>
+                <li><a href="physcologicaly">PSYCHOLOGICAL</a></li>
+            </ul>
+        </div>
+    </div>
+ </nav>
+<div class="contenet">
+    <form action="Physicalresult" method="post">
+        <h1>Physical Question:</h1><center>
+        <div class="mb-3">
+            <label for="chestPain">1. Have you ever experienced chest pain or discomfort during physical activity or at rest?</label><br>
+            <input type="radio" id="chestPainYes" name="chestPain" value="yes">
+            <label for="chestPainYes">Yes</label>
+            <input type="radio" id="chestPainNo" name="chestPain" value="no" checked>
+            <label for="chestPainNo">No</label><br>
+            <input type="text" id="chestPainInput" name="chestPainInput" class="textbox" placeholder="Details (if any)">
+        </div>
+        <div class="mb-3">
+            <label for="shortOfBreath">2. Do you frequently feel short of breath, even when engaging in light physical activities?</label><br>
+            <input type="radio" id="shortOfBreathYes" name="shortOfBreath" value="yes">
+            <label for="shortOfBreathYes">Yes</label>
+            <input type="radio" id="shortOfBreathNo" name="shortOfBreath" value="no" checked>
+            <label for="shortOfBreathNo">No</label><br>
+            <input type="text" id="shortOfBreathInput" name="shortOfBreathInput" class="textbox" placeholder="Details (if any)">
+        </div>
+        <div class="mb-3">
+            <label for="irregularHeartbeats">3. Have you noticed irregular heartbeats or palpitations?</label><br>
+            <input type="radio" id="irregularHeartbeatsYes" name="irregularHeartbeats" value="yes">
+            <label for="irregularHeartbeatsYes">Yes</label>
+            <input type="radio" id="irregularHeartbeatsNo" name="irregularHeartbeats" value="no" checked>
+            <label for="irregularHeartbeatsNo">No</label><br>
+            <input type="text" id="irregularHeartbeatsInput" name="irregularHeartbeatsInput" class="textbox" placeholder="Details (if any)">
+        </div>
+        <div class="mb-3">
+            <label for="highBloodPressure">4. Do you have a history of high blood pressure, or have you been diagnosed with hypertension?</label><br>
+            <input type="radio" id="highBloodPressureYes" name="highBloodPressure" value="yes">
+            <label for="highBloodPressureYes">Yes</label>
+            <input type="radio" id="highBloodPressureNo" name="highBloodPressure" value="no" checked>
+            <label for="highBloodPressureNo">No</label><br>
+            <input type="text" id="highBloodPressureInput" name="highBloodPressureInput"class="textbox" placeholder="Details (if any)">
+          </div>
+          <div class="mb-3">
+              <label for="dizziness">5. Have you ever experienced dizziness or lightheadedness, especially when standing up quickly?</label><br>
+              <input type="radio" id="dizzinessYes" name="dizziness" value="yes">
+              <label for="dizzinessYes">Yes</label>
+              <input type="radio" id="dizzinessNo" name="dizziness" value="no" checked>
+              <label for="dizzinessNo">No</label><br>
+              <input type="text" id="dizzinessInput" name="dizzinessInput" class="textbox" placeholder="Details (if any)">
+          </div></center>
+          <center><input type="submit" class="my-cta-button" value="SUBMIT"></center>
+      </form>  
+      <div class="result">
+          {% if result_message == "The person may not have heart disease." %}
+          <h1>{{ result_message }}</h1>
+          {% endif %}
+          
+          {% if result_message == "The person might have heart disease." %}
+          <h1>{{ result_message }}</h1>
+          <h2>Suggestion To Prevent</h2>
+          <pre>
+              <p>
+              Here are some suggestions to prevent heart disease:
+              - Eat a healthy diet rich in fruits, vegetables, whole grains, and lean proteins.
+              - Exercise regularly to maintain a healthy weight and keep your heart strong.
+              - Avoid smoking and limit alcohol intake.
+              - Manage stress through relaxation techniques such as meditation or deep breathing exercises.
+              - Get regular check-ups with your healthcare provider to monitor your heart health.
+              - Follow any treatment plans prescribed by your doctor if you have existing heart conditions.
+              </p>
+          </pre>
+          {% endif %}
+      </div>
+  </div>
+  </body>
+  </html>
+  
