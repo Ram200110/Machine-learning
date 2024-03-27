@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='images/style.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+            <div class="navbar-collapse">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="value">PREDICTION</a></li>
+                    <li><a href="Physical">PHYSICAL</a></li>
+                    <li><a href="physcologicaly">PSYCHOLOGICAL</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    
+    
+    <center><h1>Heart Disease Prediction</h1></center>
+    <div class='name'  style="margin-left:20%;">
+        <!-- <form action="predict" method="post" style="background-color: crimson;"> -->
+            <form action="predict" method="post">
+            
+                <label>AGE</label>
+                <input type="number" name="age"><br><br>
+                <label>SEX</label>
+                <select id="sex" name="sex">
+                    <option selected>----select option----</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select><br><br>
+                <label>CHEST PAIN TYPE</label>
+                <select id="cp" name="chest">
+                    <option selected>----select option----</option>
+                    <option value="0">Typical Angina</option>
+                    <option value="1">Atypical Angina</option>
+                    <option value="2">Non-anginal Pain</option>
+                    <option value="3">Asymtomatic</option>
+                </select><br><br>
+                <label>RESTING_BP</label>
+                <input type="number" name="resting"><br><br>
+                <label>CHOLESTROL</label>
+                <input type="number" name="chol"><br><br>
+                <label>FASTING BLOOD SUGAR</label>
+                <input type="number" name="fasting"><br><br>
+                <label>RESTECG</label>
+                <select id="restecg" name="rest">
+                    <option selected>----select option----</option>
+                    <option value="0">Normal</option>
+                    <option value="1">Having ST-T wave abnormality</option>
+                    <option value="2">Probable or definite left ventricular hypertrophy</option>
+                </select><br><br>
+                <label>Max Heart Rate </label>
+                <input type="number" name="max"><br><br>
+                <label>Exercise-induced Angina</label>
+                <select id="exang" name="ex">
+                    <option selected>----select option----</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select><br><br>
+                <label>OLDPEAK</label>
+                <input type="number" name="old"><br><br>
+                <label>SLOPE</label>
+                <select id="slope" name="slope">
+                    <option selected>----select option----</option>
+                    <option value="0">Upsloping</option>
+                    <option value="1">Flat</option>
+                    <option value="2">Downsloping</option>
+                </select><br><br>
+                <label>NUM_MAJOR_VESSELS</label>
+                <input type="number" name="num"><br><br>
+                <label>THAL</label>
+                <select id="thal" name="thal">
+                    <option selected>----select option----</option>
+                    <option value="0">Normal</option>
+                    <option value="1">Fixed Defect</option> 
+                    <option value="2">Reversible Defect</option>  
+                </select><br><br>
+            </div>
+            <center><input type="submit" class="my-cta-button" value="SUBMIT"></center>
+        </form>
+    </div>
+
+</body>
+</html>

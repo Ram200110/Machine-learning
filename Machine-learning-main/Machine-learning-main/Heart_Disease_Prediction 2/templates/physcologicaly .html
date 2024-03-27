@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+.my-cta-button{
+	background: #f9f9f9;
+   	border: 2px solid #000000;
+    border-radius: 1000px;
+    box-shadow: 3px 3px #8c8c8c;
+	margin-top: 10px;
+    padding: 10px 36px;
+    color: #000000;
+    display: inline-block;
+   	font: italic bold 20px/1 "Calibri", sans-serif;
+    text-align: center;
+}
+
+.my-cta-button:hover{
+    color: #141414;
+    border: 2px solid #46424b;
+}
+
+.my-cta-button:active{
+    box-shadow: 0 0;
+}
+.result {
+        width: 60%;
+        margin: 20% auto;
+        background-color: white;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        font-family: 'Arial', sans-serif;
+      }
+    
+      h1 {
+        color: #020a0e;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+      }
+    
+      h2 {
+        color: #e74c3c;
+        margin-top: 20px;
+      }
+    
+      hr {
+        border: 1px solid #bdc3c7;
+      }
+    
+      pre {
+        white-space: pre-wrap;
+      }
+    
+      p {
+        line-height: 1.6;
+      }
+    </style>
+</head>
+<body style="background-image: url(static/images/heartimg.jpg); background-repeat: no-repeat;background-size: cover;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">HEART DISEASE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" href="value">Prediction</a>
+                <a class="nav-link" href="Physical">Physical</a>
+                <a class="nav-link" href="physcologicaly">Physcologicaly</a>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <form action="physcologicalyresult" method="post">
+          <h1>Pyscologicaly  Question:</h1>
+          <div class="mb-3">
+              <label class="form-label">1.Have you experienced persistent feelings of sadness or hopelessness in the past few weeks? </label><br>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="chestPain" id="chestPainYes" value="yes">
+                  <label class="form-check-label" for="chestPainYes">
+                      Yes
+                  </label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="chestPain" id="chestPainNo" value="no" checked>
+                  <label class="form-check-label" for="chestPainNo">
+                      No
+                  </label>
+              </div>
+              <input type="textbox" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 70%;">
+          </div>
+          <div class="mb-3">
+              <label class="form-label">2.Do you often find yourself worrying excessively about various aspects of your life?
+            </label><br>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shortOfBreath" id="shortOfBreathYes" value="yes">
+                  <label class="form-check-label" for="shortOfBreathYes">
+                      Yes
+                  </label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shortOfBreath" id="shortOfBreathNo"  value="no"   checked>
+                  <label class="form-check-label" for="shortOfBreathNo">
+                      No
+                  </label>
+              </div>
+              <input type="textbox" class="form-control" id="exampleInputPassword1" style="width: 70%;">
+          </div>
+          <div class="mb-3">
+              <label class="form-label">3.Have you noticed a significant change in your appetite, either eating much more or much less than usual?</label><br>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shortOfBreath1" id="shortOfBreathYes1" value="yes">
+                  <label class="form-check-label" for="shortOfBreathYes1">
+                      Yes
+                  </label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shortOfBreath1" id="shortOfBreathNo1" value="no" checked>
+                  <label class="form-check-label" for="shortOfBreathNo1">
+                      No
+                  </label>
+              </div>
+              <input type="textbox" class="form-control" id="exampleInputPassword1" style="width: 70%;">
+          </div>
+          <div class="mb-3">
+              <label class="form-label">4.Do you frequently experience a sense of impending doom or fear without an apparent reason?</label><br>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shortOfBreath2" id="shortOfBreathYes2" value="yes">
+                  <label class="form-check-label" for="shortOfBreathYes2">
+                      Yes
+                  </label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shortOfBreath2" id="shortOfBreathNo2" value="no" checked>
+                  <label class="form-check-label" for="shortOfBreathNo2">
+                      No
+                  </label>
+              </div>
+              <input type="textbox" class="form-control" id="exampleInputPassword1" style="width: 70%;">
+          </div>
+          <div class="mb-3">
+              <label class="form-label">5.Have you been struggling with feelings of intense stress or pressure in your daily life?</label><br>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shortOfBreath3" id="shortOfBreathYes3" value="yes">
+                  <label class="form-check-label" for="shortOfBreathYes3">
+                      Yes
+                  </label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="shortOfBreath3" id="shortOfBreathNo3" value="no" checked>
+                  <label class="form-check-label" for="shortOfBreathNo3">
+                      No
+                  </label>
+              </div>
+              <input type="textbox" class="form-control" id="exampleInputPassword1" style="width: 70%;">
+          </div>
+          
+          <center><input type="submit" class="my-cta-button" value="SUBMIT"></center>
+      </form>
+      <div class="result">
+        {% if result_message =="The person may not have heart disease." %}
+          <h1>{{ result_message }}</h1>
+        {% endif %}
+      
+        {% if result_message == "The person might have heart disease." %}
+          <h1>{{ result_message }}</h1>
+          <h2>Suggestion To Prevent</h2>
+ 
+          <pre>
+            <p>
+                Practice stress-reduction techniques such as deep breathing, meditation, or yoga.
+                Identify sources of stress in your life and work on finding healthy ways to cope with them.
+                Prioritize self-care activities that bring relaxation and joy.
+               <h3> Regular Exercise:</h3>
+                Engage in regular physical activity, as exercise has been shown to have positive effects on mental health.
+                Choose activities you enjoy, whether it's walking, jogging, cycling, or participating in group fitness classes.
+                <h3>Healthy Sleep Habits:</h3>
+                Establish a consistent sleep routine with a regular bedtime and wake-up time.
+                Create a comfortable sleep environment and avoid stimulants like caffeine close to bedtime.
+                Aim for 7-9 hours of quality sleep each night.
+                <h3>Social Connections:</h3>
+                Cultivate strong, supportive relationships with friends and family.
+                Stay socially connected, even in a digital age, through regular interactions and meaningful conversations.
+                Seek help and talk openly about your feelings if you are struggling emotionally.
+                <h3>Mindfulness and Mind-Body Practices:</h3>
+                Practice mindfulness and meditation to stay present and reduce anxiety.
+                Explore mind-body practices such as tai chi or qigong, which can have positive effects on both mental and physical health.
+            </p>
+          </pre>
+        {% endif %}
+      </div>
+      
+  
+      </div>
+    
+</body>
+</html>
